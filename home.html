@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MegaTrove</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .category-card {
+            transition: transform 0.3s ease;
+        }
+    
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+            cursor: pointer;
+        }
+    
+        .hover-white:hover {
+            color: #ffffff !important;
+        }
+
+            .elite-glow {
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.3) !important;
+            border: 2px solid rgba(255, 193, 7, 0.5) !important;
+        }
+    
+        .elite-glow:hover {
+            box-shadow: 0 0 40px rgba(255, 193, 7, 0.5) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+        <header class="p-3 text-bg-dark">
+        <div class="container-fluid px-4">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="home.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                    <span class="fs-4 fw-bold text-white">Mega</span><span class="fs-4 fw-bold text-warning">Trove</span>
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="home.html" class="nav-link active px-2 text-white">Home</a></li>
+                    <li><a href="features.html" class="nav-link px-2 text-white">Features</a></li>
+                    <li><a href="pricing.html" class="nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="faqs.html" class="nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="about.html" class="nav-link px-2 text-white">About</a></li>
+                </ul>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="text-end">
+                    <a href="cart.html" class="btn btn-outline-light me-3">🛒 Cart (<span id="cart-count">0</span>)</a>
+                    <a href="login.php" class="btn btn-outline-light me-2">Login</a>
+                    <a href="signup.php" class="btn btn-warning">Sign-up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1920&h=600&fit=crop" class="d-block w-100" alt="Tech Gadgets">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Premium Electronics</h5>
+                    <p>Upgrade your setup with the latest tech and gadgets.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&h=600&fit=crop" class="d-block w-100" alt="Fashion Trends">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Latest Fashion Trends</h5>
+                    <p>Discover styles that fit your personality perfectly.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1920&h=600&fit=crop" class="d-block w-100" alt="Mega Sale">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>MegaTrove Special Deals</h5>
+                    <p>Everything you need, all in one place at unbeatable prices.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="bg-warning text-dark text-center py-1 fw-bold small">
+    🔥 <span id="live-count">45</span> people are viewing MegaTrove right now!
+    </div>
+    <div id="toast-box" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+    <div class="toast show border-0 shadow-lg" role="alert">
+        <div class="toast-body bg-dark text-white rounded">
+            📦 Someone from <strong>Jaipur</strong> just bought a <strong>Wireless Headphone</strong>!
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-5">
+    <h2 class="text-center mb-4 fw-bold">Shop By Category</h2>
+    <div class="row g-4 text-center">
+
+        <div class="col-6 col-md-3">
+            <a href="electronices.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Electronics">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Electronics</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <a href="fashion.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Fashion">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Fashion</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <a href="home-living.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Home">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Home & Living</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <a href="groceries.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Daily Needs">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Groceries</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-md-3">
+            <a href="beauty-care.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Beauty">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Beauty & Care</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-6 col-md-3">
+            <a href="sports-fitness.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Sports">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Sports & Fitness</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-6 col-md-3">
+            <a href="books-stationery.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Books">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Books & Stationery</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-6 col-md-3">
+            <a href="toys-games.html" class="text-decoration-none text-dark">
+                <div class="card border-0 shadow-sm category-card">
+                    <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=500&h=400&fit=crop" class="card-img-top rounded" alt="Toys">
+                    <div class="card-body py-2">
+                        <h6 class="card-title fw-bold m-0">Toys & Games</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="cart.js"></script>
+</body>
+<div class="container my-5">
+        <h2 class="text-center fw-bold mb-5">🔥 Trending Now</h2>
+        
+        <div class="row g-4">
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=400&fit=crop" class="card-img-top p-3" alt="Headphones">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="card-title fw-bold">Wireless Headphones Pro</h6>
+                        <p class="card-text text-muted small">High-quality noise cancellation.</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold fs-5">₹2,999</span>
+                            <button class="btn btn-sm btn-dark">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=400&fit=crop" class="card-img-top p-0 rounded-top" alt="T-Shirt">
+                    <div class="card-body d-flex flex-column mt-3">
+                        <h6 class="card-title fw-bold">Classic White T-Shirt</h6>
+                        <p class="card-text text-muted small">100% Cotton, premium regular fit.</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold fs-5">₹499</span>
+                            <button class="btn btn-sm btn-dark">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500&h=400&fit=crop" class="card-img-top p-0 rounded-top" alt="Fitness Band">
+                    <div class="card-body d-flex flex-column mt-3">
+                        <h6 class="card-title fw-bold">Smart Fitness Tracker</h6>
+                        <p class="card-text text-muted small">Heart rate and sleep monitor.</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold fs-5">₹1,999</span>
+                            <button class="btn btn-sm btn-dark">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=400&fit=crop" class="card-img-top p-0 rounded-top" alt="Desk Lamp">
+                    <div class="card-body d-flex flex-column mt-3">
+                        <h6 class="card-title fw-bold">Minimalist Desk Lamp</h6>
+                        <p class="card-text text-muted small">Adjustable warm light for your workspace.</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold fs-5">₹899</span>
+                            <button class="btn btn-sm btn-dark">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="electronices.html" class="btn btn-outline-dark px-4 py-2 fw-bold">View All Products</a>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row text-center border-top border-bottom py-4 shadow-sm bg-light rounded">
+            <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <h5 class="text-primary mb-1">🚚</h5>
+                <h6 class="fw-bold">Free Shipping</h6>
+                <small class="text-muted">On orders over ₹499</small>
+            </div>
+            <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <h5 class="text-success mb-1">🛡️</h5>
+                <h6 class="fw-bold">Secure Payment</h6>
+                <small class="text-muted">Phone Pay, Cards & UPI</small>
+            </div>
+            <div class="col-md-3 col-6">
+                <h5 class="text-warning mb-1">↩️</h5>
+                <h6 class="fw-bold">Easy Returns</h6>
+                <small class="text-muted">7-day return policy</small>
+            </div>
+            <div class="col-md-3 col-6">
+                <h5 class="text-info mb-1">📞</h5>
+                <h6 class="fw-bold">24/7 Support</h6>
+                <small class="text-muted">Always here for you</small>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+<footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4 col-lg-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-warning mb-3">MegaTrove</h5>
+                    <p class="text-secondary">
+                        Aapki zaroorat ka har saaman ek hi jagah. Best quality, fast shipping, aur 100% secure payment ke sath ek next-generation shopping experience.
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-secondary text-decoration-none hover-white">Home</a></li>
+                        <li class="mb-2"><a href="electronices.html" class="text-secondary text-decoration-none hover-white">Electronics</a></li>
+                        <li class="mb-2"><a href="fashion.html" class="text-secondary text-decoration-none hover-white">Fashion</a></li>
+                        <li class="mb-2"><a href="groceries.html" class="text-secondary text-decoration-none hover-white">Daily Deals</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-lg-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Customer Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="faqs.html" class="text-secondary text-decoration-none hover-white">Help & FAQs</a></li>
+                        <li class="mb-2"><a href="return-policy.html" class="text-secondary text-decoration-none hover-white">Return Policy</a></li>
+                        <li class="mb-2"><a href="track-order.html" class="text-secondary text-decoration-none hover-white">Track Order</a></li>
+                        <li class="mb-2"><a href="contact-us.html" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-lg-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Stay Updated</h5>
+                    <p class="text-secondary">Naye offers aur deals ki jankari sidhe apne inbox mein payein.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2 text-bg-dark border-secondary" placeholder="Email address" aria-label="Email">
+                        <button class="btn btn-warning" type="button">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="row border-top border-secondary pt-3 mt-3">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0 text-secondary">&copy; 2026 MegaTrove. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>

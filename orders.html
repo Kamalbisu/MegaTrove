@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Orders - MegaTrove Prime</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            min-height: calc(100vh - 76px);
+            background-color: #fff;
+            border-right: 1px solid #dee2e6;
+        }
+        .nav-link-custom {
+            color: #495057;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .nav-link-custom:hover, .nav-link-custom.active {
+            background-color: #212529;
+            color: #ffc107 !important;
+        }
+        .order-card {
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+        .order-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            border-radius: 12px 12px 0 0;
+            padding: 15px 20px;
+        }
+        .track-step {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .step-active { background-color: #198754; color: white; }
+        .step-pending { background-color: #e9ecef; color: #6c757d; }
+    </style>
+</head>
+<body>
+
+    <header class="p-3 text-bg-dark sticky-top shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="home.html" class="text-white text-decoration-none fs-4 fw-bold text-warning">
+                <span class="text-white">Mega</span><span class="text-warning">Trove</span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <span class="text-white small d-none d-md-inline">👑 Prime Member</span>
+                <a href="home.html" class="btn btn-sm btn-outline-light rounded-pill">Back to Store</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse p-3">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom px-3 py-2" href="prime-dashboard.html">
+                                📊 Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom active px-3 py-2" href="orders.html">
+                                📦 My Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom px-3 py-2" href="rewards.html">
+                                🎁 Exclusive Rewards
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom px-3 py-2" href="payments.html">
+                                💳 Payment Methods
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4 pt-3 border-top">
+                            <a class="nav-link nav-link-custom px-3 py-2 text-danger" href="login.html">
+                                🚪 Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 py-4">
+                
+                <h4 class="fw-bold mb-4">Your Orders</h4>
+
+                    <ul class="nav nav-pills mb-4 gap-2" id="order-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-pill px-4 fw-bold shadow-sm" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-selected="true">All Orders</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-4 text-dark fw-bold" id="pills-transit-tab" data-bs-toggle="pill" data-bs-target="#pills-transit" type="button" role="tab" aria-selected="false">In Transit</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-4 text-dark fw-bold" id="pills-delivered-tab" data-bs-toggle="pill" data-bs-target="#pills-delivered" type="button" role="tab" aria-selected="false">Delivered</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-4 text-dark fw-bold" id="pills-cancelled-tab" data-bs-toggle="pill" data-bs-target="#pills-cancelled" type="button" role="tab" aria-selected="false">Cancelled</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent">
+                    
+                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" tabindex="0">
+                        <div class="order-card shadow-sm border-warning border-start border-4">
+                            <div class="order-header d-flex flex-wrap justify-content-between align-items-center bg-white">
+                                <div><span class="text-muted small d-block">ORDER PLACED</span><span class="fw-bold fs-6">18 June 2026</span></div>
+                                <div><span class="text-muted small d-block">TOTAL</span><span class="fw-bold fs-6">₹3,499</span></div>
+                                <div><span class="text-muted small d-block">PAYMENT</span><span class="fw-bold fs-6">Paid via Phone Pay</span></div>
+                                <div class="text-end mt-2 mt-sm-0"><span class="text-muted small d-block">ORDER #MT-84732</span><a href="#" class="text-decoration-none fw-bold text-dark small">Invoice</a></div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold text-warning mb-3">Arriving by Tomorrow, 8 PM</h5>
+                                <div class="row align-items-center mb-4">
+                                    <div class="col-md-2 col-4 mb-3 mb-md-0"><img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=400&fit=crop" class="img-fluid rounded" alt="Bands"></div>
+                                    <div class="col-md-6 col-8">
+                                        <h6 class="fw-bold mb-1">Pro Resistance Band Set (Pack of 5)</h6>
+                                        <p class="text-muted small mb-0">Seller: MegaTrove Fitness Hub</p>
+                                        <button class="btn btn-sm btn-dark rounded-pill mt-3 px-3">Track Package</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-card shadow-sm border-success border-start border-4 mt-4">
+                            <div class="order-header d-flex flex-wrap justify-content-between align-items-center bg-white">
+                                <div><span class="text-muted small d-block">ORDER PLACED</span><span class="fw-bold fs-6">02 June 2026</span></div>
+                                <div><span class="text-muted small d-block">TOTAL</span><span class="fw-bold fs-6">₹899</span></div>
+                                <div><span class="text-muted small d-block">PAYMENT</span><span class="fw-bold fs-6">Paid via Phone Pay</span></div>
+                                <div class="text-end mt-2 mt-sm-0"><span class="text-muted small d-block">ORDER #MT-84610</span><a href="#" class="text-decoration-none fw-bold text-dark small">Invoice</a></div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold text-success mb-3">Delivered on 05 June</h5>
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 col-4 mb-3 mb-md-0"><img src="https://images.unsplash.com/photo-1610890716171-6b1bb98ffaed?w=400&h=400&fit=crop" class="img-fluid rounded" alt="Chess"></div>
+                                    <div class="col-md-6 col-8">
+                                        <h6 class="fw-bold mb-1">Premium Wooden Chess Board</h6>
+                                        <p class="text-muted small mb-0">Seller: Board Game Co.</p>
+                                        <div class="mt-3">
+                                            <button class="btn btn-sm btn-outline-dark rounded-pill px-3 me-2">Buy again</button>
+                                            <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Write review</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-card shadow-sm border-danger border-start border-4 mt-4">
+                            <div class="order-header d-flex flex-wrap justify-content-between align-items-center bg-white">
+                                <div><span class="text-muted small d-block">ORDER PLACED</span><span class="fw-bold fs-6">25 May 2026</span></div>
+                                <div><span class="text-muted small d-block">TOTAL</span><span class="fw-bold fs-6 text-decoration-line-through">₹1,499</span></div>
+                                <div><span class="text-muted small d-block">REFUND</span><span class="fw-bold fs-6 text-success">Completed</span></div>
+                                <div class="text-end mt-2 mt-sm-0"><span class="text-muted small d-block">ORDER #MT-84502</span><a href="#" class="text-decoration-none fw-bold text-dark small">Details</a></div>
+                            </div>
+                            <div class="card-body p-4 opacity-75">
+                                <h5 class="fw-bold text-danger mb-3">Cancelled by You</h5>
+                                <p class="small text-muted mb-4 border-start border-3 border-danger ps-2">Refund of ₹1,499 was successfully processed to your Phone Pay wallet on 26 May.</p>
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 col-4 mb-3 mb-md-0"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop" class="img-fluid rounded grayscale" alt="Bag" style="filter: grayscale(100%);"></div>
+                                    <div class="col-md-6 col-8">
+                                        <h6 class="fw-bold mb-1 text-decoration-line-through">Urban Travel Backpack</h6>
+                                        <p class="text-muted small mb-0">Reason: Found a better price</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-transit" role="tabpanel" tabindex="0">
+                        <div class="order-card shadow-sm border-warning border-start border-4">
+                            <div class="order-header d-flex flex-wrap justify-content-between align-items-center bg-white">
+                                <div><span class="text-muted small d-block">ORDER PLACED</span><span class="fw-bold fs-6">18 June 2026</span></div>
+                                <div><span class="text-muted small d-block">TOTAL</span><span class="fw-bold fs-6">₹3,499</span></div>
+                                <div><span class="text-muted small d-block">PAYMENT</span><span class="fw-bold fs-6">Paid via Phone Pay</span></div>
+                                <div class="text-end mt-2 mt-sm-0"><span class="text-muted small d-block">ORDER #MT-84732</span></div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold text-warning mb-3">Arriving by Tomorrow, 8 PM</h5>
+                                <div class="bg-light p-3 rounded-3 border mb-4">
+                                    <div class="d-flex align-items-center justify-content-between position-relative">
+                                        <div class="position-absolute bg-success" style="height: 4px; width: 50%; z-index: 1; top: 10px;"></div>
+                                        <div class="position-absolute bg-secondary opacity-25" style="height: 4px; width: 100%; z-index: 0; top: 10px;"></div>
+                                        <div class="text-center position-relative" style="z-index: 2;"><div class="track-step step-active">✓</div><div class="small mt-1 fw-bold">Placed</div></div>
+                                        <div class="text-center position-relative" style="z-index: 2;"><div class="track-step step-active">✓</div><div class="small mt-1 fw-bold">Shipped</div></div>
+                                        <div class="text-center position-relative" style="z-index: 2;"><div class="track-step step-pending text-bg-warning border-0">3</div><div class="small mt-1 text-dark fw-bold">In Transit</div></div>
+                                        <div class="text-center position-relative" style="z-index: 2;"><div class="track-step step-pending">4</div><div class="small mt-1 text-muted">Delivered</div></div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 col-4 mb-3 mb-md-0"><img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=400&fit=crop" class="img-fluid rounded" alt="Bands"></div>
+                                    <div class="col-md-6 col-8">
+                                        <h6 class="fw-bold mb-1">Pro Resistance Band Set (Pack of 5)</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-delivered" role="tabpanel" tabindex="0">
+                        <div class="order-card shadow-sm border-success border-start border-4">
+                            <div class="order-header d-flex flex-wrap justify-content-between align-items-center bg-white">
+                                <div><span class="text-muted small d-block">ORDER PLACED</span><span class="fw-bold fs-6">02 June 2026</span></div>
+                                <div><span class="text-muted small d-block">TOTAL</span><span class="fw-bold fs-6">₹899</span></div>
+                                <div class="text-end mt-2 mt-sm-0"><span class="text-muted small d-block">ORDER #MT-84610</span></div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold text-success mb-3">Delivered on 05 June</h5>
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 col-4 mb-3 mb-md-0"><img src="https://images.unsplash.com/photo-1610890716171-6b1bb98ffaed?w=400&h=400&fit=crop" class="img-fluid rounded" alt="Chess"></div>
+                                    <div class="col-md-6 col-8">
+                                        <h6 class="fw-bold mb-1">Premium Wooden Chess Board</h6>
+                                        <button class="btn btn-sm btn-outline-dark rounded-pill px-3 mt-3">Buy it again</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-cancelled" role="tabpanel" tabindex="0">
+                        <div class="order-card shadow-sm border-danger border-start border-4">
+                            <div class="card-body p-4 opacity-75">
+                                <h5 class="fw-bold text-danger mb-3">Cancelled by You</h5>
+                                <p class="small text-muted mb-4 border-start border-3 border-danger ps-2">Refund of ₹1,499 was successfully processed to your Phone Pay wallet on 26 May.</p>
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 col-4 mb-3 mb-md-0"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop" class="img-fluid rounded grayscale" alt="Bag" style="filter: grayscale(100%);"></div>
+                                    <div class="col-md-6 col-8">
+                                        <h6 class="fw-bold mb-1 text-decoration-line-through">Urban Travel Backpack</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="order-card shadow-sm">
+                    <div class="order-header d-flex flex-wrap justify-content-between align-items-center">
+                        <div>
+                            <span class="text-muted small d-block">ORDER PLACED</span>
+                            <span class="fw-bold fs-6">18 June 2026</span>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block">TOTAL</span>
+                            <span class="fw-bold fs-6">₹3,499</span>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block">PAYMENT</span>
+                            <span class="fw-bold fs-6">Paid via Phone Pay</span>
+                        </div>
+                        <div class="text-end mt-2 mt-sm-0">
+                            <span class="text-muted small d-block">ORDER #MT-84732</span>
+                            <a href="#" class="text-decoration-none fw-bold text-dark small">View Invoice</a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-success mb-3">Arriving by Tomorrow, 8 PM</h5>
+                        
+                        <div class="row align-items-center mb-4">
+                            <div class="col-md-2 col-4 mb-3 mb-md-0">
+                                <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=400&fit=crop" class="img-fluid rounded" alt="Resistance Bands">
+                            </div>
+                            <div class="col-md-6 col-8">
+                                <h6 class="fw-bold mb-1">Pro Resistance Band Set (Pack of 5)</h6>
+                                <p class="text-muted small mb-0">Seller: MegaTrove Fitness Hub</p>
+                                <a href="#" class="btn btn-sm btn-outline-dark rounded-pill mt-3 px-3">Track Package</a>
+                            </div>
+                        </div>
+
+                        <div class="bg-light p-3 rounded-3 border">
+                            <div class="d-flex align-items-center justify-content-between position-relative">
+                                <div class="position-absolute bg-success" style="height: 4px; width: 50%; z-index: 1; top: 10px;"></div>
+                                <div class="position-absolute bg-secondary opacity-25" style="height: 4px; width: 100%; z-index: 0; top: 10px;"></div>
+                                
+                                <div class="text-center position-relative" style="z-index: 2;">
+                                    <div class="track-step step-active">✓</div>
+                                    <div class="small mt-1 fw-bold">Placed</div>
+                                </div>
+                                <div class="text-center position-relative" style="z-index: 2;">
+                                    <div class="track-step step-active">✓</div>
+                                    <div class="small mt-1 fw-bold">Shipped</div>
+                                </div>
+                                <div class="text-center position-relative" style="z-index: 2;">
+                                    <div class="track-step step-pending">3</div>
+                                    <div class="small mt-1 text-muted">Out for Delivery</div>
+                                </div>
+                                <div class="text-center position-relative" style="z-index: 2;">
+                                    <div class="track-step step-pending">4</div>
+                                    <div class="small mt-1 text-muted">Delivered</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-card shadow-sm">
+                    <div class="order-header d-flex flex-wrap justify-content-between align-items-center">
+                        <div>
+                            <span class="text-muted small d-block">ORDER PLACED</span>
+                            <span class="fw-bold fs-6">02 June 2026</span>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block">TOTAL</span>
+                            <span class="fw-bold fs-6">₹899</span>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block">PAYMENT</span>
+                            <span class="fw-bold fs-6">Paid via Phone Pay</span>
+                        </div>
+                        <div class="text-end mt-2 mt-sm-0">
+                            <span class="text-muted small d-block">ORDER #MT-84610</span>
+                            <a href="#" class="text-decoration-none fw-bold text-dark small">View Invoice</a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge text-bg-secondary px-3 py-2 rounded-pill me-2">Delivered on 05 June</span>
+                            <span class="small fw-semibold text-muted">Package was handed directly to resident.</span>
+                        </div>
+                        
+                        <div class="row align-items-center">
+                            <div class="col-md-2 col-4 mb-3 mb-md-0">
+                                <img src="https://images.unsplash.com/photo-1610890716171-6b1bb98ffaed?w=400&h=400&fit=crop" class="img-fluid rounded" alt="Chess Set">
+                            </div>
+                            <div class="col-md-6 col-8">
+                                <h6 class="fw-bold mb-1">Premium Wooden Chess Board</h6>
+                                <p class="text-muted small mb-0">Seller: Board Game Co.</p>
+                                <div class="mt-3">
+                                    <button class="btn btn-sm btn-dark rounded-pill px-3 me-2">Buy it again</button>
+                                    <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Write a product review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+.category-card {
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    cursor: pointer;
+}
+
+.hover-white:hover {
+    color: #ffffff !important;
+}
+
+.feature-icon-box {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    font-size: 2rem;
+    margin: 0 auto 20px auto;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-box {
+    background-color: #ffc107;
+    color: white;
+    transform: scale(1.1);
+}
+
+.feature-card {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Navbar Link Styling */
+.nav-link {
+    color: white !important;
+    /* Default color white */
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+    /* Hover par yellow */
+}
+
+/* Active Link (Jo page khula hai) */
+.nav-link.active {
+    color: #ffc107 !important;
+    /* Active page par yellow */
+    font-weight: bold;
+}
+.parallax-header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556742049-0cf04468a4d4?w=1600');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+}

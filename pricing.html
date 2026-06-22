@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pricing Plans - MegaTrove</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffc107;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .hero-plan {
+            border: 2px solid #ffc107;
+            transform: scale(1.05);
+            z-index: 2;
+        }
+        .hero-plan:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        .ribbon {
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            background: #ffc107;
+            padding: 5px 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-radius: 5px 0 0 5px;
+        }
+        .feature-check { color: #198754; font-weight: bold; }
+        
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="home.html" class="text-white text-decoration-none fs-4 fw-bold text-warning">
+                <span class="text-white">Mega</span><span class="text-warning">Trove</span>
+            </a>
+            <a href="home.html" class="btn btn-sm btn-outline-light rounded-pill">Back to Store</a>
+        </div>
+    </header>
+
+    
+
+    <div class="container my-5 text-center">
+        <h1 class="fw-bold display-4">Simple, Transparent Pricing</h1>
+        <p class="text-muted lead">Choose the plan that fits your shopping lifestyle.</p>
+
+        <div class="row g-4 mt-5 align-items-center">
+            
+            <div class="col-lg-4">
+                <div class="card pricing-card h-100 p-4 shadow-sm">
+                    <h4 class="text-muted">Basic</h4>
+                    <h2 class="fw-bold my-4">₹0 <small class="text-muted fs-6">/ forever</small></h2>
+                    <ul class="list-unstyled text-start mb-5">
+                        <li class="mb-3"><span class="feature-check">✓</span> Standard Shipping</li>
+                        <li class="mb-3"><span class="feature-check">✓</span> Basic Rewards</li>
+                        <li class="mb-3"><span class="text-muted">✗</span> Prime Early Access</li>
+                        <li class="mb-3"><span class="text-muted">✗</span> 24/7 Priority Support</li>
+                    </ul>
+                    <a href="/checkout.html" class="btn btn-outline-dark btn-premium w-100 rounded-pill">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card pricing-card hero-plan h-100 p-4 shadow-lg position-relative">
+                    <div class="ribbon">MOST POPULAR</div>
+                    <h4 class="text-warning">MegaTrove Pro</h4>
+                    <h2 class="fw-bold my-4">₹499 <small class="text-muted fs-6">/ year</small></h2>
+                    <ul class="list-unstyled text-start mb-5">
+                        <li class="mb-3"><span class="feature-check">✓</span> Free Priority Shipping</li>
+                        <li class="mb-3"><span class="feature-check">✓</span> 2x MegaCoins</li>
+                        <li class="mb-3"><span class="feature-check">✓</span> Prime Early Access</li>
+                        <li class="mb-3"><span class="feature-check">✓</span> 24/7 Priority Support</li>
+                    </ul>
+                    <a href="/checkout.html" class="btn btn-warning btn-premium w-100 rounded-pill fw-bold">Upgrade Now</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card pricing-card h-100 p-4 shadow-sm">
+                    <h4 class="text-muted">Elite</h4>
+                    <h2 class="fw-bold my-4">₹999 <small class="text-muted fs-6">/ year</small></h2>
+                    <ul class="list-unstyled text-start mb-5">
+                        <li class="mb-3"><span class="feature-check">✓</span> Free Unlimited Express</li>
+                        <li class="mb-3"><span class="feature-check">✓</span> 5x MegaCoins</li>
+                        <li class="mb-3"><span class="feature-check">✓</span> Dedicated Manager</li>
+                        <li class="mb-3"><span class="feature-check">✓</span> Exclusive Monthly Gifts</li>
+                    </ul>
+                    <a href="/checkout.html" class="btn btn-outline-dark btn-premium w-100 rounded-pill">Go Elite</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container my-5 py-5">
+        <h3 class="fw-bold mb-4 text-center">Compare All Features</h3>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle border text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-start p-3">Features</th>
+                        <th>Basic</th>
+                        <th>Pro (Popular)</th>
+                        <th>Elite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-start p-3">Priority Shipping</td>
+                        <td>Standard</td>
+                        <td class="text-warning fw-bold">Free</td>
+                        <td class="text-warning fw-bold">Unlimited Express</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start p-3">MegaCoins Multiplier</td>
+                        <td>1x</td>
+                        <td>2x</td>
+                        <td class="fw-bold">5x</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start p-3">Dedicated Support</td>
+                        <td>Email Only</td>
+                        <td>24/7 Priority</td>
+                        <td class="fw-bold">VIP Manager</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start p-3">Early Sale Access</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes (Exclusive)</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start p-3">Monthly Gifts</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Features - MegaTrove</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <style>
+        .feature-icon-box {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            font-size: 2rem;
+            margin: 0 auto 20px auto;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .feature-icon-box {
+            background-color: #ffc107;
+            color: white;
+            transform: scale(1.1);
+        }
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid px-4">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="home.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <span class="fs-4 fw-bold text-white">Mega</span><span class="fs-4 fw-bold text-warning">Trove</span>
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-4">
+                    <li><a href="home.html" class="nav-link px-2 text-white">Home</a></li>
+                    <li><a href="features.html" class="nav-link active px-2 text-warning fw-bold">Features</a></li>
+                    <li><a href="pricing.html" class="nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="faqs.html" class="nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="about.html" class="nav-link px-2 text-white">About</a></li>
+                </ul>
+                <div class="text-end d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-outline-light me-3">
+                        🛒 Cart (<span id="cart-count">0</span>)
+                    </a>
+                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                    <a href="login.html" class="btn btn-warning">Sign-up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container my-5">
+        
+        <div class="row align-items-center mb-5 pb-5 border-bottom">
+            <div class="col-md-6 pe-md-5 mb-4 mb-md-0">
+                <span class="badge text-bg-warning px-3 py-2 mb-3 fs-6 shadow-sm">🚀 Superfast Delivery</span>
+                <h2 class="fw-bold display-6 mb-3">Aapka Order, Aapke Doorstep Par.</h2>
+                <p class="text-muted lead">Hum samajhte hain ki intezaar karna kaisa lagta hai. Isliye hamara logistics network 24-48 hours mein delivery ensure karta hai. Live tracking ke sath apne order par nazar rakhein.</p>
+                <ul class="list-unstyled text-muted mt-4 fw-semibold">
+                    <li class="mb-2">✔️ Real-time GPS Tracking</li>
+                    <li class="mb-2">✔️ Contactless Delivery Options</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=600&fit=crop" class="img-fluid rounded-4 shadow-lg" alt="Fast Delivery">
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5 pb-5 border-bottom flex-md-row-reverse">
+            <div class="col-md-6 ps-md-5 mb-4 mb-md-0">
+                <span class="badge text-bg-dark px-3 py-2 mb-3 fs-6 shadow-sm">🛡️ 100% Secure</span>
+                <h2 class="fw-bold display-6 mb-3">Safe Payments, Zero Tension.</h2>
+                <p class="text-muted lead">Aapka data hamari priority hai. Bank-level encryption aur trusted payment gateways ke sath, aapki har transaction puri tarah se safe aur seamless hai.</p>
+                <ul class="list-unstyled text-muted mt-4 fw-semibold">
+                    <li class="mb-2">✔️ Phone Pay, UPI & Cards Supported</li>
+                    <li class="mb-2">✔️ Zero Hidden Charges ya Extra Fees</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" class="img-fluid rounded-4 shadow-lg" alt="Secure Payment">
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5 pb-5">
+            <div class="col-md-6 pe-md-5 mb-4 mb-md-0">
+                <span class="badge text-bg-success px-3 py-2 mb-3 fs-6 shadow-sm">↩️ Easy Returns</span>
+                <h2 class="fw-bold display-6 mb-3">Pasand Na Aaye? Turant Wapas Karein.</h2>
+                <p class="text-muted lead">Shopping honi chahiye tension-free. Agar product aapki expectations par khara nahi utarta, toh hamari 7-days no-questions-asked return policy ka fayda uthayein.</p>
+                <ul class="list-unstyled text-muted mt-4 fw-semibold">
+                    <li class="mb-2">✔️ Instant Refunds to Source Account</li>
+                    <li class="mb-2">✔️ Free Doorstep Return Pick-up</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=600&fit=crop" class="img-fluid rounded-4 shadow-lg" alt="Easy Returns">
+            </div>
+        </div>
+
+    </div>
+
+<div class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <span class="badge text-bg-dark px-3 py-2 mb-3 fs-6 rounded-pill">Premium Experience</span>
+        <h2 class="fw-bold display-6">MegaTrove Exclusive Perks</h2>
+        <p class="text-muted">Kuch aisi suvidhayein jo aapko sirf yahan milengi.</p>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4 mb-5 bg-white">
+        <div class="card-body p-4 p-md-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 pe-lg-5 mb-4 mb-lg-0">
+                    <h3 class="fw-bold mb-3">AI Smart Recommendations</h3>
+                    <p class="text-muted">Hamara advanced system aapki shopping style ko samajhta hai. Bina ghanton search kiye, wahi products dekhein jo exactly aapke taste aur zaroorat se match karte hain.</p>
+                    
+                    <div class="p-3 bg-light rounded-3 border mt-4">
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="aiSwitch" checked>
+                            <label class="form-check-label fw-bold small" for="aiSwitch">Enable Personalization Engine</label>
+                        </div>
+                        <p class="small text-muted mb-2">Your Current Interests:</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge text-bg-dark px-3 py-2 rounded-pill">💻 Tech Gadgets</span>
+                            <span class="badge text-bg-dark px-3 py-2 rounded-pill">👕 Streetwear</span>
+                            <button class="btn btn-sm btn-outline-secondary rounded-pill fw-bold">+ Add More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" class="img-fluid rounded-4 shadow-sm w-100 object-fit-cover" alt="AI Dashboard" style="max-height: 350px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4 mb-5 bg-white">
+        <div class="card-body p-4 p-md-5">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6 ps-lg-5 mb-4 mb-lg-0">
+                    <h3 class="fw-bold mb-3">MegaTrove Prime</h3>
+                    <p class="text-muted">Hamare exclusive members club ka hissa banein. Har order par free priority shipping, early access to mega sales, aur special cashback offers ka anand lein.</p>
+                    
+                    <div class="p-3 bg-light rounded-3 border border-warning border-opacity-50 mt-4 position-relative overflow-hidden">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="fw-bold fs-5">Premium Status</span>
+                            <span class="badge text-bg-warning px-3 py-1">Incomplete</span>
+                        </div>
+                        <p class="small fw-semibold mb-1">Unlock Free Shipping Lifetime</p>
+                        <div class="progress mb-3" style="height: 8px;">
+                            <div class="progress-bar bg-warning w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="small text-muted mb-3">Just 2 more purchases away!</p>
+                        <a href="prime-dashboard.html" class="btn btn-dark btn-sm w-100 fw-bold rounded-pill shadow-sm">View Prime Dashboard</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&h=600&fit=crop" class="img-fluid rounded-4 shadow-sm w-100 object-fit-cover" alt="Prime Rewards" style="max-height: 350px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container my-5 text-center">
+        <h1 class="fw-bold display-5 mb-3">Why Choose MegaTrove?</h1>
+        <p class="text-muted lead mx-auto" style="max-width: 700px;">
+            Hum sirf products nahi deliver karte, hum ek behtareen shopping experience deliver karte hain. Dekhiye kya cheez humein sabse alag banati hai.
+        </p>
+    </div>
+
+    <div class="container mb-5 pb-5">
+        <div class="row g-4 text-center">
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 feature-card">
+                    <div class="feature-icon-box shadow-sm">⚡</div>
+                    <h5 class="fw-bold">Lightning Fast Delivery</h5>
+                    <p class="text-muted small mb-0">Aapka order place hote hi hamari team action mein aa jati hai. Get your products delivered within 24-48 hours.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 feature-card">
+                    <div class="feature-icon-box shadow-sm">🛡️</div>
+                    <h5 class="fw-bold">100% Secure Payments</h5>
+                    <p class="text-muted small mb-0">Bank-level encryption ke sath safe checkouts. Hum Phone Pay, Credit/Debit cards aur UPI support karte hain.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 feature-card">
+                    <div class="feature-icon-box shadow-sm">💎</div>
+                    <h5 class="fw-bold">Premium Quality Guarantee</h5>
+                    <p class="text-muted small mb-0">Har product strict quality check se guzarta hai taaki aapko hamesha best aur authentic items milein.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 feature-card">
+                    <div class="feature-icon-box shadow-sm">🔄</div>
+                    <h5 class="fw-bold">Hassle-Free Returns</h5>
+                    <p class="text-muted small mb-0">Product pasand nahi aaya? Koi baat nahi. Hamari 7-days no-questions-asked return policy ka fayda uthayein.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 feature-card">
+                    <div class="feature-icon-box shadow-sm">🎧</div>
+                    <h5 class="fw-bold">24/7 Customer Support</h5>
+                    <p class="text-muted small mb-0">Hamari dedicated support team hamesha aapki madad ke liye taiyar hai, din ho ya raat.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 feature-card">
+                    <div class="feature-icon-box shadow-sm">🎁</div>
+                    <h5 class="fw-bold">Exclusive Rewards</h5>
+                    <p class="text-muted small mb-0">Har kharidari par loyalty points earn karein aur unhe apne aage aane wale orders par discount ke liye use karein.</p>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-warning mb-3">MegaTrove</h5>
+                    <p class="text-secondary">
+                        Aapki zaroorat ka har saaman ek hi jagah. Best quality, fast shipping, aur 100% secure payment ke sath ek next-generation shopping experience.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-secondary text-decoration-none hover-white">Home</a></li>
+                        <li class="mb-2"><a href="category.html" class="text-secondary text-decoration-none hover-white">Products</a></li>
+                        <li class="mb-2"><a href="features.html" class="text-secondary text-decoration-none hover-white">Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Customer Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Help & FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Return Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Stay Updated</h5>
+                    <p class="text-secondary">Naye offers aur deals ki jankari sidhe apne inbox mein payein.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2 text-bg-dark border-secondary" placeholder="Email address">
+                        <button class="btn btn-warning" type="button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row border-top border-secondary pt-3 mt-3">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0 text-secondary">&copy; 2026 MegaTrove. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script> </body>
+</html>
